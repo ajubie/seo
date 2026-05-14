@@ -18,7 +18,7 @@ Before generating any content, you MUST read and absorb the rules from the follo
 **Task Instructions:**
 1. **Read References:**
    - Read the keywords list at `keyword.txt`.
-   - Read the blog template at `blog_template.html`. This template contains the exact HTML structure, ad banners (top, sidebar, bottom), header, footer, and JSON-LD schema we want to use.
+   - Read the blog template at `blog_template.html`. This template contains the exact HTML structure, ad banners (top, sidebar, bottom), and JSON-LD schema we want to use. Note that the header and footer are purposely excluded from this template and should not be included in your output.
 
 2. **Generate Content:**
    For each keyword in the `keyword.txt` file (e.g., "Best PGP Tools 2026"):

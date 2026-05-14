@@ -1,0 +1,221 @@
+/* ══════════════════════════════════════════════
+   DARKDIR — BLOG TEMPLATE STYLES
+   blog_template.css
+   ══════════════════════════════════════════════ */
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-base:      #080b0f;
+  --bg-surface:   #0d1117;
+  --bg-card:      #111820;
+  --bg-card-hover:#141c28;
+  --bg-elevated:  #161f2d;
+  --border:       rgba(255,255,255,0.06);
+  --border-hover: rgba(57,255,20,0.25);
+
+  --accent:       #39ff14;
+  --accent-dim:   rgba(57,255,20,0.12);
+  --accent-glow:  rgba(57,255,20,0.35);
+
+  --text-primary:   #e8edf3;
+  --text-secondary: #8b95a3;
+  --text-muted:     #4a5568;
+  --text-accent:    #39ff14;
+
+  --online:  #22c55e;
+  --offline: #ef4444;
+  --warn:    #f59e0b;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 24px rgba(57,255,20,0.15);
+
+  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: 0.4s cubic-bezier(0.4,0,0.2,1);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ── LAYOUT ── */
+.container {
+  width: 100%;
+  max-width: 900px; /* Optimal reading width */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: rgba(8, 11, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.logo-text .accent {
+  color: var(--accent);
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  color: var(--accent);
+  border: 1px solid var(--border-hover);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-dim);
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ── BLOG CONTENT ── */
+.main-content {
+  padding: 60px 0 100px 0;
+}
+
+.static-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.static-header h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.static-content-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-card);
+}
+
+.static-content-wrap h2 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 40px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.static-content-wrap h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 30px 0 15px 0;
+}
+
+.static-content-wrap p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.static-content-wrap ul, .static-content-wrap ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+  color: var(--text-secondary);
+}
+
+.static-content-wrap li {
+  margin-bottom: 10px;
+}
+
+.static-content-wrap li strong {
+  color: var(--text-primary);
+}
+
+/* ── ADS ── */
+.ad-banner-horizontal:hover, .ad-banner-rect:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+  transition: all var(--transition);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .static-header h1 {
+    font-size: 2rem;
+  }
+  .static-content-wrap {
+    padding: 24px;
+  }
+  .ad-banner-rect {
+    float: none !important;
+    margin: 0 auto 30px auto !important;
+    display: block;
+  }
+  .main-nav {
+    display: none; /* simple mobile hide for template */
+  }
+}

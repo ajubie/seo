@@ -1,0 +1,3 @@
+🔍 Running pre-commit SEO checks...
+
+✓ All SEO checks passed
